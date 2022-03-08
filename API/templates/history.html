@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block menu %}
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('home') }}">Home_User </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('profile') }}">Profile </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('history') }}">Historial </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('logout') }}">Logout </a>
+</li>
+{%endblock%}
+
+{% block body %}
+    <table class = "table table-striped">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Artículo</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Fecha</th>
+            </tr>
+            {% for ls in bls %}
+            <tr>
+                {% for info in ls %}
+                <th>
+                    {{info}}
+                </th>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </thead>
+    </table>
+{% endblock %}

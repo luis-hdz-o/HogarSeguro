@@ -1,0 +1,28 @@
+{% extends 'layout.html'%}
+
+{% block body %}
+<div class="col-md-12">
+	<div class="form-group row">
+		<form action= "{{ url_for('register') }}" method="POST" autocomplete="off">
+      <fieldset>
+        <legend>Mi cuenta</legend>
+        
+		<div class="form-group">
+      <label for="username" >Ingresa tu correo</label>
+			<input type="text" name = "username" placeholder="Tu correo" class="form-control" id= "fullname" required>
+		</div>
+		<div class="form-group">
+      <label for="password" >Ingresa tu password</label>
+			<input type="password" name = "password" placeholder="... y tu password"  class="form-control">
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary"> 
+				Vamoa ver mi cuenta :D
+			</button>
+    </div>
+    </fieldset>
+		</form>
+	</div>
+</div>
+
+{% endblock %}  

@@ -1,0 +1,38 @@
+{% extends 'layout.html'%}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-12">
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in  messages%}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{message}}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endfor %}
+        {% endif%}
+        {% endwith%}
+        <br>
+        <div class="jumbotron">
+              <h1 class="display-3">No te preocupes, ya estas seguro :)</h1>
+              <p class="lead">En Hogar Seguro encontrarás todas las soluciones de seguridad que neceista tu hogar o empresa</p>
+              <hr class="my-4">
+              <p>Tenemos el paquete que necesitas, además de servicios adicionales después de tu compra. Nosotros no te dejamos solo, te ayudamos s seguir seguro!</p>
+              <p class="lead">
+                <a class="btn btn-primary btn-lg" href="" role="button">Learn more</a>
+              </p>
+        </div>   
+
+</div>
+
+{% include 'catalogo.html' %}
+
+
+
+
+
+{% endblock %}  

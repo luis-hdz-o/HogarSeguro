@@ -1,0 +1,54 @@
+{% extends 'layout.html'%}
+
+
+{% block menu %}
+	<li class="nav-item">
+		<a class="nav-link" href="{{ url_for('home') }}">Home_User </a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="{{ url_for('profile') }}">Profile </a>
+  </li>
+	<li class="nav-item">
+		<a class="nav-link" href="{{ url_for('logout') }}">Logout </a>
+	</li>
+{%endblock%}
+{% block body %}
+
+<div class="row">
+    <div class="col-md-5">
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in  messages%}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{message}}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endfor %}
+        {% endif%}
+        {% endwith%}
+    </div>
+    <br>
+        <div class="jumbotron">
+              <h1 class="display-3">Welcome back Admin, {{ username }}! </h1>
+              <p class="lead">Bienvenidos Alumnos de Taller de programacion van a reprobar el tetra</p>
+              <hr class="my-4">
+              <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+              <!-- <p class="lead">
+                <a class="btn btn-primary btn-lg" href="" role="button">Learn more</a>
+              </p> -->
+        </div>
+</div>
+<br>
+	
+
+	<div class="content">
+    {% block content %}
+    
+    {% include 'catalogo.html' %}
+    
+    {% endblock %}
+	</div>
+{% endblock %}  
